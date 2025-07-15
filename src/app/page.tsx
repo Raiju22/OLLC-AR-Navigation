@@ -138,11 +138,6 @@ export default function HomePage() {
           >
             Start Navigating
           </Button>
-          <Link href="/generate-label" passHref>
-            <Button variant="outline" className="rounded-full">
-                Generate Location Label
-            </Button>
-          </Link>
       </div>
     </motion.div>
   );
