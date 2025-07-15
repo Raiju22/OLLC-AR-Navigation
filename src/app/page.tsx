@@ -323,7 +323,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="p-4 flex items-center gap-3 bg-background/80 backdrop-blur-sm sticky top-0 z-20">
+      <header className="p-4 flex items-center gap-3 bg-slate-700/80 backdrop-blur-sm sticky top-0 z-20">
         <Image src={ollcLogo} alt="OLLC Logo" width={40} height={40} />
         <h1 className="text-xl font-semibold text-white font-headline [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
           Our Lady of Lourdes College
