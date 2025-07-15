@@ -84,6 +84,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-gradient-to-br from-slate-900 to-blue-950 text-foreground;
+    @apply bg-gradient-to-b from-blue-950 to-slate-950 text-foreground;
   }
 }
