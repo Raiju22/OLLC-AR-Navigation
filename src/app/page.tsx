@@ -140,7 +140,6 @@ export default function HomePage() {
         size="lg"
         className="h-14 px-10 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground"
       >
-        <Map className="mr-3 h-6 w-6" />
         Start Navigating
       </Button>
     </motion.div>
@@ -194,14 +193,6 @@ export default function HomePage() {
           </div>
         </CardContent>
       </Card>
-       <div className="mt-6 text-center">
-            <Link href="/generate-label" passHref>
-              <Button variant="outline" className="rounded-full">
-                 <Wand2 className="mr-2 h-4 w-4" />
-                Generate Location Label
-              </Button>
-            </Link>
-        </div>
     </motion.div>
   );
 
@@ -347,5 +338,3 @@ export default function HomePage() {
     </main>
   );
 }
-
-    
