@@ -6,7 +6,7 @@ import type { Building, Room } from "@/lib/data";
 import { buildings, popularDestinations } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, HomeIcon } from "lucide-react";
+import { ArrowRight, ChevronLeft, HomeIcon, Navigation } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
@@ -137,6 +137,7 @@ export default function HomePage() {
             className="h-14 px-10 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             Start Navigating
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
       </div>
     </motion.div>
