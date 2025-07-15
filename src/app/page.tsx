@@ -125,17 +125,17 @@ export default function HomePage() {
       transition={{ duration: 0.3 }}
       className="w-full flex flex-col items-center justify-center h-full text-center px-4"
     >
-      <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-headline [text-shadow:0_4px_8px_rgba(0,0,0,0.3)]">
+      <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-headline [text-shadow:0_4px_8px_rgba(0,0,0,0.5)]">
         <span className="text-white">OLLC</span> <span className="text-primary">AR Navigation</span>
       </h1>
-      <p className="max-w-xl mb-8 text-base sm:text-lg text-foreground/80">
+      <p className="max-w-xl mb-8 text-base sm:text-lg text-foreground/80 [text-shadow:0_1px_2px_#000]">
         Effortlessly find your way around campus with our augmented reality navigator.
       </p>
       <div className="flex flex-col items-center gap-4">
           <Button
             onClick={() => setView("destinations")}
             size="lg"
-            className="h-14 px-10 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground"
+            className="h-14 px-10 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground [text-shadow:0_1px_2px_#000]"
           >
             Start Navigating
           </Button>
@@ -155,13 +155,13 @@ export default function HomePage() {
       className="w-full"
     >
       <header className="flex justify-center items-center w-full mb-6">
-          <h1 className="text-2xl font-bold text-center">
+          <h1 className="text-2xl font-bold text-center [text-shadow:0_1px_2px_#000]">
             SELECT A DESTINATION
           </h1>
       </header>
       <Card className="w-full shadow-lg rounded-2xl bg-card/80">
         <CardContent className="p-4">
-          <h2 className="text-xl font-bold mb-4 text-center">
+          <h2 className="text-xl font-bold mb-4 text-center [text-shadow:0_1px_2px_#000]">
             Popular Destinations
           </h2>
           <div className="grid grid-cols-2 gap-3 mb-4">
@@ -169,13 +169,13 @@ export default function HomePage() {
               <Button
                 key={dest.id}
                 onClick={() => handleDestinationSelect(dest.name)}
-                className="w-full h-16 text-sm font-semibold rounded-2xl shadow-md transition-transform transform hover:scale-105"
+                className="w-full h-16 text-sm font-semibold rounded-2xl shadow-md transition-transform transform hover:scale-105 [text-shadow:0_1px_2px_#000]"
               >
                 {dest.name}
               </Button>
             ))}
           </div>
-          <h2 className="text-xl font-bold my-4 text-center">
+          <h2 className="text-xl font-bold my-4 text-center [text-shadow:0_1px_2px_#000]">
             Buildings
           </h2>
           <div className="flex flex-col gap-3">
@@ -183,7 +183,7 @@ export default function HomePage() {
              <Button
                 key={building.id}
                 onClick={() => handleBuildingSelect(building)}
-                className="w-full h-16 text-base font-semibold rounded-2xl shadow-md transition-transform transform hover:scale-105"
+                className="w-full h-16 text-base font-semibold rounded-2xl shadow-md transition-transform transform hover:scale-105 [text-shadow:0_1px_2px_#000]"
             >
                 {building.name}
             </Button>
@@ -206,11 +206,11 @@ export default function HomePage() {
         className="w-full"
       >
         <header className="flex justify-between items-center w-full mb-4 sticky top-0 bg-background/80 backdrop-blur-sm p-2 z-10 -mx-2">
-          <Button variant="ghost" size="icon" onClick={back} aria-label="Back">
+          <Button variant="ghost" size="icon" onClick={back} aria-label="Back" className="[text-shadow:0_1px_2px_#000]">
             <ChevronLeft className="w-6 h-6" />
           </Button>
-          <h2 className="text-xl font-bold">{selectedBuilding.name}</h2>
-          <Button variant="ghost" size="icon" onClick={goHome} aria-label="Home">
+          <h2 className="text-xl font-bold [text-shadow:0_1px_2px_#000]">{selectedBuilding.name}</h2>
+          <Button variant="ghost" size="icon" onClick={goHome} aria-label="Home" className="[text-shadow:0_1px_2px_#000]">
             <HomeIcon className="w-6 h-6" />
           </Button>
         </header>
@@ -218,7 +218,7 @@ export default function HomePage() {
           <CardContent className="p-0">
             {selectedBuilding.floors.map((floor) => (
               <div key={floor.name} className="mb-6 last:mb-0">
-                <h3 className="font-semibold mb-3 border-b pb-2 text-lg">
+                <h3 className="font-semibold mb-3 border-b pb-2 text-lg [text-shadow:0_1px_2px_#000]">
                   {floor.name}
                 </h3>
                 <div className="grid grid-cols-3 gap-3">
@@ -227,7 +227,7 @@ export default function HomePage() {
                       key={room.id}
                       onClick={() => handleRoomSelect(room)}
                       variant="default"
-                      className="h-14 text-xs rounded-xl"
+                      className="h-14 text-xs rounded-xl [text-shadow:0_1px_2px_#000]"
                     >
                       {room.name}
                     </Button>
@@ -271,7 +271,7 @@ export default function HomePage() {
               size="icon"
               onClick={back}
               aria-label="Back"
-              className="bg-background/50 hover:bg-background/80 rounded-full"
+              className="bg-background/50 hover:bg-background/80 rounded-full [text-shadow:0_1px_2px_#000]"
             >
               <ChevronLeft className="w-6 h-6" />
             </Button>
@@ -280,7 +280,7 @@ export default function HomePage() {
               size="icon"
               onClick={goHome}
               aria-label="Home"
-              className="bg-background/50 hover:bg-background/80 rounded-full"
+              className="bg-background/50 hover:bg-background/80 rounded-full [text-shadow:0_1px_2px_#000]"
             >
               <HomeIcon className="w-6 h-6" />
             </Button>
@@ -290,10 +290,10 @@ export default function HomePage() {
             {hasCameraPermission === false && (
               <Card className="w-full max-w-md bg-destructive/90">
                 <CardContent className="p-6">
-                  <h2 className="text-lg font-bold text-destructive-foreground text-center mb-2">
+                  <h2 className="text-lg font-bold text-destructive-foreground text-center mb-2 [text-shadow:0_1px_2px_#000]">
                     Camera Access Required
                   </h2>
-                  <p className="text-destructive-foreground text-center">
+                  <p className="text-destructive-foreground text-center [text-shadow:0_1px_2px_#000]">
                     Please allow camera access in your browser to use the AR
                     feature.
                   </p>
@@ -303,17 +303,17 @@ export default function HomePage() {
             {hasCameraPermission === true && (
               <div className="text-center text-white p-6 bg-black/50 rounded-2xl">
                 <ArMarkerIcon className="w-24 h-24 mx-auto text-primary" />
-                <h2 className="text-3xl font-bold mt-4">
+                <h2 className="text-3xl font-bold mt-4 [text-shadow:0_1px_2px_#000]">
                   {selectedRoom.name}
                 </h2>
-                <p className="text-md mt-2">
+                <p className="text-md mt-2 [text-shadow:0_1px_2px_#000]">
                   Point camera at an AR marker to navigate.
                 </p>
               </div>
             )}
             {hasCameraPermission === null && (
                  <div className="text-center text-white">
-                    <p>Requesting camera permission...</p>
+                    <p className="[text-shadow:0_1px_2px_#000]">Requesting camera permission...</p>
                  </div>
             )}
           </div>
@@ -323,9 +323,9 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="p-4 flex items-center gap-3 bg-black/30">
+      <header className="p-4 flex items-center gap-3 bg-background/80 backdrop-blur-sm sticky top-0 z-20">
         <Image src={ollcLogo} alt="OLLC Logo" width={40} height={40} />
-        <h1 className="text-xl font-semibold text-white font-headline">
+        <h1 className="text-xl font-semibold text-white font-headline [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
           Our Lady of Lourdes College
         </h1>
       </header>
@@ -342,10 +342,8 @@ export default function HomePage() {
         </AnimatePresence>
       </main>
       <footer className="p-4 text-center text-xs text-foreground/50 bg-black/30">
-        <p>&copy; 2025 OLLC AR Navigation. All rights reserved.</p>
+        <p className="[text-shadow:0_1px_2px_#000]">&copy; 2025 OLLC AR Navigation. All rights reserved.</p>
       </footer>
     </div>
   );
 }
-
-    
