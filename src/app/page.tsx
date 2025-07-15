@@ -129,8 +129,8 @@ export default function HomePage() {
       transition={{ duration: 0.3 }}
       className="w-full flex flex-col items-center justify-center h-full text-center px-4"
     >
-      <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-primary font-headline">
-        OLLC AR Navigation
+      <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-headline [text-shadow:0_4px_8px_rgba(0,0,0,0.3)]">
+        <span className="text-white">OLLC</span> <span className="text-primary">AR Navigation</span>
       </h1>
       <p className="max-w-xl mb-8 text-base sm:text-lg text-foreground/80">
         Effortlessly find your way around campus with our augmented reality navigator.
@@ -324,17 +324,25 @@ export default function HomePage() {
     );
 
   return (
-    <main className="flex flex-col items-center min-h-screen p-4 font-body">
-      <div className="w-full max-w-lg mx-auto relative flex-grow flex items-center">
-        <AnimatePresence mode="wait">
-          {view === "welcome" && renderWelcome()}
-          {view === "destinations" && renderDestinations()}
-          {view === "building" && renderBuilding()}
+    <div className="flex flex-col min-h-screen">
+      <header className="p-4 text-center">
+        <h1 className="text-2xl font-bold text-white">Our Lady of Caysasay</h1>
+      </header>
+      <main className="flex flex-col items-center justify-center flex-grow p-4 font-body">
+        <div className="w-full max-w-lg mx-auto relative flex-grow flex items-center">
+          <AnimatePresence mode="wait">
+            {view === "welcome" && renderWelcome()}
+            {view === "destinations" && renderDestinations()}
+            {view === "building" && renderBuilding()}
+          </AnimatePresence>
+        </div>
+        <AnimatePresence>
+          {view === "ar" && renderARView()}
         </AnimatePresence>
-      </div>
-      <AnimatePresence>
-        {view === "ar" && renderARView()}
-      </AnimatePresence>
-    </main>
+      </main>
+      <footer className="p-4 text-center text-xs text-foreground/50">
+        <p>&copy; 2024 OLLC AR Navigation. All rights reserved.</p>
+      </footer>
+    </div>
   );
 }
