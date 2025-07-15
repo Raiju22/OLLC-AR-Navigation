@@ -10,6 +10,7 @@ import { ChevronLeft, HomeIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
+import Link from "next/link";
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -129,13 +130,20 @@ export default function HomePage() {
       <p className="max-w-xl mb-8 text-base sm:text-lg text-foreground/80">
         Effortlessly find your way around campus with our augmented reality navigator.
       </p>
-      <Button
-        onClick={() => setView("destinations")}
-        size="lg"
-        className="h-14 px-10 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground"
-      >
-        Start Navigating
-      </Button>
+      <div className="flex flex-col items-center gap-4">
+          <Button
+            onClick={() => setView("destinations")}
+            size="lg"
+            className="h-14 px-10 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground"
+          >
+            Start Navigating
+          </Button>
+          <Link href="/generate-label" passHref>
+            <Button variant="outline" className="rounded-full">
+                Generate Location Label
+            </Button>
+          </Link>
+      </div>
     </motion.div>
   );
 
@@ -319,8 +327,8 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="p-4 text-center bg-black/30">
-        <h1 className="text-2xl font-bold text-white">Our Lady of Lourdes College</h1>
+      <header className="p-4 text-left bg-black/30">
+        <h1 className="text-xl font-semibold text-white font-headline">Our Lady of Lourdes College</h1>
       </header>
       <main className="flex flex-col items-center justify-center flex-grow p-4 font-body">
         <div className="w-full max-w-lg mx-auto relative flex-grow flex items-center">
