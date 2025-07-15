@@ -154,7 +154,7 @@ export default function HomePage() {
             SELECT A DESTINATION
           </h1>
       </header>
-      <Card className="w-full shadow-lg rounded-2xl bg-white/50 backdrop-blur-sm border-none">
+      <Card className="w-full shadow-lg rounded-2xl bg-card border">
         <CardContent className="p-4">
           <h2 className="text-xl font-bold mb-4 text-center">
             Popular Destinations
