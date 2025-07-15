@@ -121,6 +121,36 @@ export const buildings: Building[] = [
           { id: 'elem-2-10', name: 'Room 210' },
         ],
       },
+      {
+        name: 'Third Floor',
+        rooms: [
+            { id: 'elem-3-1', name: 'Room 301' },
+            { id: 'elem-3-2', name: 'Room 302' },
+            { id: 'elem-3-3', name: 'Room 303' },
+            { id: 'elem-3-4', name: 'Room 304' },
+            { id: 'elem-3-5', name: 'Room 305' },
+            { id: 'elem-3-6', name: 'Room 306' },
+            { id: 'elem-3-7', name: 'Room 307' },
+            { id: 'elem-3-8', name: 'Room 308' },
+            { id: 'elem-3-9', name: 'Room 309' },
+            { id: 'elem-3-10', name: 'Room 310' },
+        ]
+      },
+      {
+        name: 'Fourth Floor',
+        rooms: [
+            { id: 'elem-4-1', name: 'Room 401' },
+            { id: 'elem-4-2', name: 'Room 402' },
+            { id: 'elem-4-3', name: 'Room 403' },
+            { id: 'elem-4-4', name: 'Room 404' },
+            { id: 'elem-4-5', name: 'Room 405' },
+            { id: 'elem-4-6', name: 'Room 406' },
+            { id: 'elem-4-7', name: 'Room 407' },
+            { id: 'elem-4-8', name: 'Room 408' },
+            { id: 'elem-4-9', name: 'Room 409' },
+            { id: 'elem-4-10', name: 'Room 410' },
+        ]
+      }
     ],
   },
 ];
