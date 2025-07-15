@@ -287,7 +287,7 @@ export default function HomePage() {
           </header>
 
           <div className="flex-grow flex items-center justify-center p-4">
-            {hasCameraPermission === false && (
+            {hasCameraPermission === false ? (
               <Card className="w-full max-w-md bg-destructive/90">
                 <CardContent className="p-6">
                   <h2 className="text-lg font-bold text-destructive-foreground text-center mb-2 [text-shadow:0_1px_2px_#000]">
@@ -299,8 +299,7 @@ export default function HomePage() {
                   </p>
                 </CardContent>
               </Card>
-            )}
-            {hasCameraPermission === true && (
+            ) : hasCameraPermission === true ? (
               <div className="text-center text-white p-6 bg-black/50 rounded-2xl">
                 <ArMarkerIcon className="w-24 h-24 mx-auto text-primary" />
                 <h2 className="text-3xl font-bold mt-4 [text-shadow:0_1px_2px_#000]">
@@ -310,8 +309,7 @@ export default function HomePage() {
                   Point camera at an AR marker to navigate.
                 </p>
               </div>
-            )}
-            {hasCameraPermission === null && (
+            ) : (
                  <div className="text-center text-white">
                     <p className="[text-shadow:0_1px_2px_#000]">Requesting camera permission...</p>
                  </div>
@@ -323,7 +321,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="p-4 flex items-center gap-3 bg-slate-700/80 backdrop-blur-sm sticky top-0 z-20">
+      <header className="p-4 flex items-center gap-3 bg-slate-400/80 backdrop-blur-sm sticky top-0 z-20">
         <Image src={ollcLogo} alt="OLLC Logo" width={40} height={40} />
         <h1 className="text-xl font-semibold text-white font-headline [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
           Our Lady of Lourdes College
