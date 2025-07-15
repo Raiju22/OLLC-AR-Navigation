@@ -2,9 +2,6 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import Link from 'next/link';
-import { HomeIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Campus Navigator AR',
@@ -19,18 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <header className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-50 bg-background/80 backdrop-blur-sm">
-            <Link href="/" passHref>
-              <Button variant="ghost" size="icon" aria-label="Home">
-                <HomeIcon className="w-6 h-6" />
-              </Button>
-            </Link>
-          </header>
         {children}
         <Toaster />
       </body>

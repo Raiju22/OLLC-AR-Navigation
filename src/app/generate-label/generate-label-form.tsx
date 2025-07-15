@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -15,7 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { handleLabelGeneration } from "./actions";
 import { Loader2, Wand2 } from "lucide-react";
@@ -113,7 +114,7 @@ export function GenerateLabelForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isLoading} className="w-full rounded-full">
+        <Button type="submit" disabled={isLoading} className="w-full rounded-full h-12 text-base">
           {isLoading ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : (
@@ -125,10 +126,10 @@ export function GenerateLabelForm() {
       {generatedLabel && (
         <Card className="mt-6 bg-accent/50">
             <CardHeader>
-                <CardTitle className="text-accent-foreground">Generated Label</CardTitle>
+                <CardTitle className="text-accent-foreground text-lg">Generated Label</CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-lg font-semibold text-accent-foreground">{generatedLabel}</p>
+                <p className="text-xl font-semibold text-accent-foreground">{generatedLabel}</p>
             </CardContent>
         </Card>
       )}
