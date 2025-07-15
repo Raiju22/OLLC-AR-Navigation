@@ -10,7 +10,6 @@ import { ChevronLeft, Home as HomeIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
-import Link from "next/link";
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -162,13 +161,6 @@ export default function HomePage() {
           </div>
         </CardContent>
       </Card>
-      <div className="mt-6 text-center">
-        <Link href="/generate-label" passHref>
-          <Button variant="outline" className="rounded-full">
-            Generate Location Label
-          </Button>
-        </Link>
-      </div>
     </motion.div>
   );
 
