@@ -6,7 +6,7 @@ import type { Building, Room } from "@/lib/data";
 import { buildings, popularDestinations } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, Home as HomeIcon } from "lucide-react";
+import { ChevronLeft, HomeIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
@@ -319,7 +319,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="p-4 text-center">
+      <header className="p-4 text-center bg-black/30">
         <h1 className="text-2xl font-bold text-white">Our Lady of Lourdes College</h1>
       </header>
       <main className="flex flex-col items-center justify-center flex-grow p-4 font-body">
@@ -334,7 +334,7 @@ export default function HomePage() {
           {view === "ar" && renderARView()}
         </AnimatePresence>
       </main>
-      <footer className="p-4 text-center text-xs text-foreground/50">
+      <footer className="p-4 text-center text-xs text-foreground/50 bg-black/30">
         <p>&copy; 2024 OLLC AR Navigation. All rights reserved.</p>
       </footer>
     </div>
