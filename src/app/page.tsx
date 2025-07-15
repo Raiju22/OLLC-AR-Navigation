@@ -321,12 +321,14 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="p-4 flex items-center gap-3 bg-slate-400/80 backdrop-blur-sm sticky top-0 z-20">
-        <Image src={ollcLogo} alt="OLLC Logo" width={40} height={40} />
-        <h1 className="text-xl font-semibold text-white font-headline [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
-          Our Lady of Lourdes College
-        </h1>
-      </header>
+      {view !== 'ar' && (
+        <header className="p-4 flex items-center gap-3 bg-slate-400/80 backdrop-blur-sm sticky top-0 z-20">
+          <Image src={ollcLogo} alt="OLLC Logo" width={40} height={40} />
+          <h1 className="text-xl font-semibold text-white font-headline [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
+            Our Lady of Lourdes College
+          </h1>
+        </header>
+      )}
       <main className="flex flex-col items-center justify-center flex-grow p-4 font-body">
         <div className="w-full max-w-lg mx-auto relative flex-grow flex items-center">
           <AnimatePresence mode="wait">
@@ -339,9 +341,11 @@ export default function HomePage() {
           {view === "ar" && renderARView()}
         </AnimatePresence>
       </main>
-      <footer className="p-4 text-center text-xs text-foreground/50 bg-black/30">
-        <p className="[text-shadow:0_1px_2px_#000]">&copy; 2025 OLLC AR Navigation. All rights reserved.</p>
-      </footer>
+      {view !== 'ar' && (
+        <footer className="p-4 text-center text-xs text-foreground/50 bg-black/30">
+          <p className="[text-shadow:0_1px_2px_#000]">&copy; 2025 OLLC AR Navigation. All rights reserved.</p>
+        </footer>
+      )}
     </div>
   );
 }
