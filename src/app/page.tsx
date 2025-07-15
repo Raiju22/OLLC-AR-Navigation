@@ -6,11 +6,10 @@ import type { Building, Room } from "@/lib/data";
 import { buildings, popularDestinations } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, Home as HomeIcon } from "lucide-react";
+import { ChevronLeft, Home as HomeIcon, Rocket } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
-import Link from "next/link";
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -23,8 +22,8 @@ export default function HomePage() {
     null
   );
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
-  const [view, setView] = useState<"destinations" | "building" | "ar">(
-    "destinations"
+  const [view, setView] = useState<"welcome" | "destinations" | "building" | "ar">(
+    "welcome"
   );
   const [hasCameraPermission, setHasCameraPermission] = useState<
     boolean | null
@@ -101,7 +100,8 @@ export default function HomePage() {
 
   const back = () => {
     if (view === "ar") {
-      setView(selectedBuilding?.floors.some(floor => floor.rooms.some(r => r.id === selectedRoom?.id)) ? "building" : "destinations");
+      const isPopular = popularDestinations.some(dest => dest.id === selectedRoom?.id);
+      setView(isPopular ? "destinations" : "building");
       setSelectedRoom(null);
     } else if (view === "building") {
       setView("destinations");
@@ -114,6 +114,30 @@ export default function HomePage() {
     setSelectedBuilding(null);
     setSelectedRoom(null);
   }
+
+  const renderWelcome = () => (
+    <motion.div
+      key="welcome"
+      variants={viewVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      transition={{ duration: 0.3 }}
+      className="w-full flex flex-col items-center justify-center h-full text-center"
+    >
+      <h1 className="text-4xl font-bold mb-8 text-primary">
+        Welcome to OLLC AR Navigation
+      </h1>
+      <Button
+        onClick={() => setView("destinations")}
+        size="lg"
+        className="h-14 px-8 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105"
+      >
+        <Rocket className="mr-3 h-6 w-6" />
+        Launch
+      </Button>
+    </motion.div>
+  );
 
   const renderDestinations = () => (
     <motion.div
@@ -294,8 +318,9 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center min-h-screen bg-background p-4 font-body">
-      <div className="w-full max-w-lg mx-auto relative flex-grow">
+      <div className="w-full max-w-lg mx-auto relative flex-grow flex">
         <AnimatePresence mode="wait">
+          {view === "welcome" && renderWelcome()}
           {view === "destinations" && renderDestinations()}
           {view === "building" && renderBuilding()}
         </AnimatePresence>
