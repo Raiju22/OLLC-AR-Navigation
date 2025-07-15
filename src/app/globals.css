@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   .light {
     --background: 208 100% 97%;
@@ -85,5 +81,6 @@ body {
   }
   body {
     @apply bg-gradient-to-b from-blue-950 to-slate-950 text-foreground;
+    font-family: 'Inter', sans-serif;
   }
 }
