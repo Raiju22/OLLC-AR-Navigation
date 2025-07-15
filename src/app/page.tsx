@@ -10,6 +10,8 @@ import { ChevronLeft, Home as HomeIcon, Rocket } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
+import Link from "next/link";
+import { ArrowLeft, Wand2 } from "lucide-react";
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -22,7 +24,7 @@ export default function HomePage() {
     null
   );
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
-  const [view, setView] = useState<"welcome" | "destinations" | "building" | "ar">(
+  const [view, setView] = useState<"welcome" | "destinations" | "building" | "ar" | "generate-label">(
     "welcome"
   );
   const [hasCameraPermission, setHasCameraPermission] = useState<
@@ -106,6 +108,8 @@ export default function HomePage() {
     } else if (view === "building") {
       setView("destinations");
       setSelectedBuilding(null);
+    } else if (view === 'generate-label') {
+      setView('destinations');
     }
   };
   
@@ -125,7 +129,7 @@ export default function HomePage() {
       transition={{ duration: 0.3 }}
       className="w-full flex flex-col items-center justify-center h-full text-center"
     >
-      <h1 className="text-4xl font-bold mb-8 text-primary">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-primary">
         Welcome to OLLC AR Navigation
       </h1>
       <Button
@@ -186,6 +190,14 @@ export default function HomePage() {
           </div>
         </CardContent>
       </Card>
+       <div className="mt-6 text-center">
+            <Link href="/generate-label" passHref>
+              <Button variant="outline" className="rounded-full">
+                 <Wand2 className="mr-2 h-4 w-4" />
+                Generate Location Label
+              </Button>
+            </Link>
+        </div>
     </motion.div>
   );
 
@@ -318,7 +330,7 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center min-h-screen p-4 font-body">
-      <div className="w-full max-w-lg mx-auto relative flex-grow flex">
+      <div className="w-full max-w-lg mx-auto relative flex-grow flex items-center">
         <AnimatePresence mode="wait">
           {view === "welcome" && renderWelcome()}
           {view === "destinations" && renderDestinations()}
