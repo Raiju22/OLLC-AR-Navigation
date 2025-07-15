@@ -11,6 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
 import Image from "next/image";
+import ollcLogo from './ollc.png';
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -323,7 +324,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="p-4 flex items-center gap-3 bg-black/30">
-        <Image src="/ollc.png" alt="OLLC Logo" width={40} height={40} />
+        <Image src={ollcLogo} alt="OLLC Logo" width={40} height={40} />
         <h1 className="text-xl font-semibold text-white font-headline">
           Our Lady of Lourdes College
         </h1>
@@ -346,3 +347,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
