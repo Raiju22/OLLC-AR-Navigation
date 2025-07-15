@@ -10,7 +10,7 @@ import { ChevronLeft, HomeIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
-import Link from "next/link";
+import Image from "next/image";
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -158,7 +158,7 @@ export default function HomePage() {
             SELECT A DESTINATION
           </h1>
       </header>
-      <Card className="w-full shadow-lg rounded-2xl bg-transparent border-none">
+      <Card className="w-full shadow-lg rounded-2xl bg-card/80">
         <CardContent className="p-4">
           <h2 className="text-xl font-bold mb-4 text-center">
             Popular Destinations
@@ -322,8 +322,11 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="p-4 text-left bg-black/30">
-        <h1 className="text-xl font-semibold text-white font-headline">Our Lady of Lourdes College</h1>
+      <header className="p-4 flex items-center gap-3 bg-black/30">
+        <Image src="/ollc.png" alt="OLLC Logo" width={40} height={40} />
+        <h1 className="text-xl font-semibold text-white font-headline">
+          Our Lady of Lourdes College
+        </h1>
       </header>
       <main className="flex flex-col items-center justify-center flex-grow p-4 font-body">
         <div className="w-full max-w-lg mx-auto relative flex-grow flex items-center">
