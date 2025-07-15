@@ -24,7 +24,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <header className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-50">
+        <header className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-50 bg-background/80 backdrop-blur-sm">
             <Link href="/" passHref>
               <Button variant="ghost" size="icon" aria-label="Home">
                 <HomeIcon className="w-6 h-6" />

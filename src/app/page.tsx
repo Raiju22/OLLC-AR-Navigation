@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { ArMarkerIcon } from "@/components/icons";
 
 const viewVariants = {
@@ -143,7 +142,7 @@ export default function Home() {
     </motion.div>
   );
 
-  const renderARView = () => selectedRoom && (
+  const renderARView = () => selectedRoom && selectedBuilding && (
      <motion.div
       key="ar-view"
       variants={viewVariants}
@@ -162,11 +161,12 @@ export default function Home() {
             <CardContent className="p-6">
                  <div className="text-center py-10">
                     <ArMarkerIcon className="w-32 h-32 mx-auto text-primary" />
-                    <p className="text-muted-foreground mt-4">
+                     <h2 className="text-2xl font-bold mt-6">{selectedRoom.name}</h2>
+                    <p className="text-muted-foreground mt-2">
                       AR marker is now active.
                     </p>
                   </div>
-                {selectedBuilding && selectedBuilding.floors.map((floor) => (
+                {selectedBuilding.floors.map((floor) => (
                     <div key={floor.name} className="mb-6 last:mb-0">
                         <h3 className="font-semibold mb-3 border-b pb-2">{floor.name}</h3>
                         <div className="grid grid-cols-3 gap-3">
@@ -189,7 +189,7 @@ export default function Home() {
   );
 
   return (
-    <main className="flex flex-col items-center min-h-screen bg-background p-4 font-body">
+    <main className="flex flex-col items-center min-h-screen bg-background p-4 pt-20 font-body">
       <div className="w-full max-w-md mx-auto">
         <AnimatePresence mode="wait">
           {view === 'destinations' && renderDestinations()}
