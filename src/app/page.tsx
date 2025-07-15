@@ -6,12 +6,10 @@ import type { Building, Room } from "@/lib/data";
 import { buildings, popularDestinations } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, Home as HomeIcon, Map } from "lucide-react";
+import { ChevronLeft, Home as HomeIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
-import Link from "next/link";
-import { ArrowLeft, Wand2 } from "lucide-react";
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -24,9 +22,7 @@ export default function HomePage() {
     null
   );
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
-  const [view, setView] = useState<"welcome" | "destinations" | "building" | "ar" | "generate-label">(
-    "welcome"
-  );
+  const [view, setView] = useState<"welcome" | "destinations" | "building" | "ar">("welcome");
   const [hasCameraPermission, setHasCameraPermission] = useState<
     boolean | null
   >(null);
@@ -108,8 +104,6 @@ export default function HomePage() {
     } else if (view === "building") {
       setView("destinations");
       setSelectedBuilding(null);
-    } else if (view === 'generate-label') {
-      setView('destinations');
     }
   };
   
@@ -326,7 +320,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="p-4 text-center">
-        <h1 className="text-2xl font-bold text-white">Our Lady of Caysasay</h1>
+        <h1 className="text-2xl font-bold text-white">Our Lady of Lourdes College</h1>
       </header>
       <main className="flex flex-col items-center justify-center flex-grow p-4 font-body">
         <div className="w-full max-w-lg mx-auto relative flex-grow flex items-center">
