@@ -109,7 +109,7 @@ export default function HomePage() {
   };
   
   const goHome = () => {
-    setView("destinations");
+    setView("welcome");
     setSelectedBuilding(null);
     setSelectedRoom(null);
   }
