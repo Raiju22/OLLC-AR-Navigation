@@ -126,7 +126,7 @@ export default function HomePage() {
       className="w-full flex flex-col items-center justify-center h-full text-center px-4"
     >
       <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-headline [text-shadow:0_4px_8px_rgba(0,0,0,0.5)]">
-        <span className="text-white">OLLC</span> <span className="text-primary">AR Navigation</span>
+        <span className="text-white [text-shadow:0_1px_2px_#000]">OLLC</span> <span className="text-primary [text-shadow:0_1px_2px_#000]">AR Navigation</span>
       </h1>
       <p className="max-w-xl mb-8 text-base sm:text-lg text-foreground/80 [text-shadow:0_1px_2px_#000]">
         Effortlessly find your way around campus with our augmented reality navigator.
