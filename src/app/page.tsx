@@ -10,6 +10,7 @@ import { ChevronLeft, Home as HomeIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
+import Link from "next/link";
 
 const viewVariants = {
   hidden: { opacity: 0, x: 20 },
@@ -100,8 +101,8 @@ export default function HomePage() {
 
   const back = () => {
     if (view === "ar") {
-      setView(selectedBuilding ? "building" : "destinations");
-      setSelectedRoom(null); // Keep selectedBuilding to go back to its view
+      setView(selectedBuilding?.floors.some(floor => floor.rooms.some(r => r.id === selectedRoom?.id)) ? "building" : "destinations");
+      setSelectedRoom(null);
     } else if (view === "building") {
       setView("destinations");
       setSelectedBuilding(null);
@@ -126,7 +127,7 @@ export default function HomePage() {
     >
       <header className="flex justify-center items-center w-full mb-6">
           <h1 className="text-2xl font-bold text-center">
-            Campus AR Navigator
+            SELECT A DESTINATION
           </h1>
       </header>
       <Card className="w-full shadow-lg rounded-2xl bg-white/50 backdrop-blur-sm border-none">
