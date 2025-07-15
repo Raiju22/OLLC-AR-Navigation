@@ -154,7 +154,7 @@ export default function HomePage() {
             SELECT A DESTINATION
           </h1>
       </header>
-      <Card className="w-full shadow-lg rounded-2xl bg-card border">
+      <Card className="w-full shadow-lg rounded-2xl bg-transparent border">
         <CardContent className="p-4">
           <h2 className="text-xl font-bold mb-4 text-center">
             Popular Destinations
@@ -317,7 +317,7 @@ export default function HomePage() {
     );
 
   return (
-    <main className="flex flex-col items-center min-h-screen bg-background p-4 font-body">
+    <main className="flex flex-col items-center min-h-screen p-4 font-body">
       <div className="w-full max-w-lg mx-auto relative flex-grow flex">
         <AnimatePresence mode="wait">
           {view === "welcome" && renderWelcome()}
