@@ -6,7 +6,7 @@ import type { Building, Room } from "@/lib/data";
 import { buildings, popularDestinations } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, Home as HomeIcon, Rocket } from "lucide-react";
+import { ChevronLeft, Home as HomeIcon, Map } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArMarkerIcon } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
@@ -127,21 +127,25 @@ export default function HomePage() {
       animate="visible"
       exit="exit"
       transition={{ duration: 0.3 }}
-      className="w-full flex flex-col items-center justify-center h-full text-center"
+      className="w-full flex flex-col items-center justify-center h-full text-center px-4"
     >
-      <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-primary">
-        Welcome to OLLC AR Navigation
+      <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-primary font-headline">
+        OLLC AR Navigation
       </h1>
+      <p className="max-w-xl mb-8 text-base sm:text-lg text-foreground/80">
+        Effortlessly find your way around campus with our augmented reality navigator.
+      </p>
       <Button
         onClick={() => setView("destinations")}
         size="lg"
-        className="h-14 px-8 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105"
+        className="h-14 px-10 text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground"
       >
-        <Rocket className="mr-3 h-6 w-6" />
-        Launch
+        <Map className="mr-3 h-6 w-6" />
+        Start Navigating
       </Button>
     </motion.div>
   );
+
 
   const renderDestinations = () => (
     <motion.div
@@ -158,7 +162,7 @@ export default function HomePage() {
             SELECT A DESTINATION
           </h1>
       </header>
-      <Card className="w-full shadow-lg rounded-2xl bg-transparent border">
+      <Card className="w-full shadow-lg rounded-2xl bg-transparent border-none">
         <CardContent className="p-4">
           <h2 className="text-xl font-bold mb-4 text-center">
             Popular Destinations
@@ -343,3 +347,5 @@ export default function HomePage() {
     </main>
   );
 }
+
+    
