@@ -43,3 +43,22 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+
+# Node modules (if using npm or frameworks)
+node_modules/
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store
+
+# Environment files (keep secrets private)
+*.env
+
+# VS Code settings (optional, depends on your setup)
+.vscode/
+
+# Build folders (if using build tools like Webpack)
+dist/
+build/
